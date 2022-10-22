@@ -1,9 +1,9 @@
 # Dominio
-Personnal sandbox and Portofolio
+***Richard PERRET's personnal sandbox and Portofolio***
+*edited with https://stackedit.io/app#*
 
-Loading screen (until font is available)
-tuto = https://www.youtube.com/watch?v=2Tj6lcfJytA
+ - Loading screen (until Matrix font is downloaded on client terminal)
 
-Matrix effect 
-tuto = https://dev.to/gnsp/making-the-matrix-effect-in-javascript-din
-font = https://fontmeme.com/fonts/matrix-code-nfi-font/
+ - Matrix effect
+	tuto = https://dev.to/gnsp/making-the-matrix-effect-in-javascript-din
+	font = https://fontmeme.com/fonts/matrix-code-nfi-font/
