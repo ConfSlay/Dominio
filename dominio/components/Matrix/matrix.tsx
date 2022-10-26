@@ -9,8 +9,8 @@ type Props = {
     fontColor?: string,
 }
 
-const Matrix = ({matrixWidth = 400,
-    matrixHeight = 800,
+const Matrix = ({matrixWidth = document.body.clientWidth,
+    matrixHeight = document.body.clientHeight,
     backgroundColor = "#000",
     fontFamilyAndSize = "20px Matrix",
     fontColor = '#4a444f'}:Props) => {

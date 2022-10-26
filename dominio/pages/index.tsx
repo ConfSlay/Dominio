@@ -2,8 +2,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import LoadingScreen from '../components/loading_screen'
-import Matrix from '../components/matrix'
+import LoadingScreen from '../components/LoadingScreen/loading_screen'
+import Matrix from '../components/Matrix/matrix'
+import MyAvatarScene from '../components/MyAvatar/MyAvatar-scene'
 import React from 'react';
 import { useState, useEffect } from "react";
 
@@ -34,6 +35,7 @@ const Home: NextPage = () => {
           ? <Matrix></Matrix>         
           : <LoadingScreen title = "Dominio"></LoadingScreen>    
         }
+        <MyAvatarScene></MyAvatarScene>
       </main>
     </div>
   )
