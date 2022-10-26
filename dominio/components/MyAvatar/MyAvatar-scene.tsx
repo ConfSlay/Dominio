@@ -3,16 +3,23 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import {MyAvatar} from './MyAvatar';
 
-export default function MyAvatarScene(myAvatarSceneWidth = "600px",
+type Props = {
+    myAvatarSceneWidth?: string,
+    myAvatarSceneHeight?: string,
+    backgroundColor?: string,
+}
+
+const MyAvatarScene = ({
+    myAvatarSceneWidth = "600px",
     myAvatarSceneHeight = "600px",
-    backgroundColor = "#000",) {
+    backgroundColor = "#000"}:Props) => {
    return (
       <Canvas
          camera={{ position: [2, 0, 12.25], fov: 15 }}
          style={{
-            backgroundColor: "#000",
-            width: "1000px",
-            height: "1000px",
+            backgroundColor: backgroundColor,
+            width: myAvatarSceneWidth,
+            height: myAvatarSceneHeight,
          }}
       >
          <ambientLight intensity={1.25} />
@@ -24,4 +31,6 @@ export default function MyAvatarScene(myAvatarSceneWidth = "600px",
          <OrbitControls />
       </Canvas>
    );
-}
+};
+
+export default MyAvatarScene
