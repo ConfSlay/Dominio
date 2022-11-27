@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"path": "dominio",
+			"problemMatcher": [],
+			"label": "npm: dev - dominio",
+			"detail": "next dev"
+		},
+		{
+			"type": "npm",
+			"script": "lint",
+			"path": "dominio",
+			"problemMatcher": [],
+			"label": "npm: lint - dominio",
+			"detail": "next lint"
+		}
+	]
+}

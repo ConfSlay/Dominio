@@ -1,0 +1,162 @@
+@font-face {
+    font-family: Chill;
+    src: url('../public/futura_light.ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+
+h1 {
+    font-family: Chill;
+    padding-top: 2em;
+    color:#222;
+    /* background: -webkit-linear-gradient(rgb(134, 51, 202), rgb(97, 27, 27));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.containerCustom {
+    position: absolute;
+    display : flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    row-gap: 2em;
+    align-items: center;
+
+}
+
+
+/* Calendar Root */
+.react-calendar{
+    background-color:#222 !important;
+    border:#444 2px solid !important;
+    border-radius: 10px;
+    font-family: Chill !important;
+
+  abbr{
+    color:white !important;
+    text-decoration: none !important;
+  }
+
+  /* ALL button */
+  button {
+      font-family: Chill !important;
+      color:white !important;
+      background-color:#222 !important;
+
+    // arrow to switch month and year
+    &.react-calendar__navigation {
+      &, &.hover, &:active, &.focus, &:visited, &:link  {
+        background-color:#222 !important;
+        color:white !important;
+      }
+    }
+
+    /* today button */
+    &.react-calendar__tile--now {
+      background-color: #222;
+      color:white
+    }
+
+    /* selected button */
+    &.react-calendar__tile--active {
+      background-color:#222 !important;
+      color:white !important;
+    }
+
+    /* on hover button */
+    &:hover {
+      background-color:#222 !important;
+      abbr{
+        color:white !important;
+      }      
+    }
+
+    /* weekends buttons */
+    &.react-calendar__month-view__days__day--weekend {
+      background-color:#222 !important;
+    }
+
+    /* neighboring month buttons */
+    &.react-calendar__month-view__days__day--neighboringMonth {
+      background-color:#222 !important;
+      abbr {
+        color:white !important;
+      }
+    }
+  }
+}
+
+
+
+
+/*--Button Styles--*/
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #222;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  @keyframes glowing-button-85 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  &:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  &:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+}
