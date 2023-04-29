@@ -4,10 +4,11 @@ const nextConfig = {
   swcMinify: true, 
 }
 
-module.exports = {
-  sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
-  },
-}
+// bug le loading
+// module.exports = {
+//   sassOptions: {
+//     includePaths: [path.join(__dirname, 'styles')],
+//   },
+// }
 
 module.exports = nextConfig

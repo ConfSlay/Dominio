@@ -4,4 +4,8 @@
 
  - Loading screen (until Matrix font is downloaded on client terminal)
 
+ - logo Batman/Valencia à tester
+
  - Test Tailwind 
+
+ - Test Spectrum 
