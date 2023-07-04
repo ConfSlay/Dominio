@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body { 
+    margin: 0 auto;
+    height:100vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+#matrixCanvas {
+    position: absolute;
+    z-index: 1;
+}
+
+.overCanvas {
+    z-index: 2;
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    
+    animation-duration: 12s;
+    animation-name: blurring;
+    animation-fill-mode: forwards;
+}
+
+/* to blurr  the canvas */
+@keyframes blurring {
+    0% {backdrop-filter: blur(6px);}
+    50%,70% {backdrop-filter: blur(0px);
+            background-color: transparent;
+    }
+    100% {  backdrop-filter: blur(0px); 
+            background-color: black;
+        }
+  }

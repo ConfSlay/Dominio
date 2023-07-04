@@ -2,23 +2,27 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Matrix from '../components/Matrix/matrix'
-import MyAvatarScene from '../components/MyAvatar/MyAvatar-scene'
+import Matrix3dScene from '../components/Matrix/matrix3dScene'
 import React from 'react';
 import { useState, useEffect } from "react";
 
 const Home: NextPage = () => {
 
   const [fontAvailable, setfontAvailable] = useState(false);
+  const [matrixCanvasAvailable, setMatrixCanvasAvailable] = useState(false)
 
   useEffect(() => {
+    // check if font is available
     if (!fontAvailable) {       
       document.fonts.load('20px "Matrix"').then(() => {
-        console.log(" FONT LOADED")
         setfontAvailable(true);
       })
     } 
   });
 
+  
+  
+    
 
   return (
     <div>
@@ -30,10 +34,18 @@ const Home: NextPage = () => {
 
       <main> 
         {fontAvailable 
-          ? <Matrix></Matrix>         
-          : <span>not available yet</span>    
+          ? 
+            <>
+              <Matrix></Matrix>
+              {matrixCanvasAvailable
+                ?
+                  <Matrix3dScene canvas={(document.querySelector('#matrixCanvas') as HTMLCanvasElement)} /> 
+                :
+                  null
+              }            
+            </>        
+          : <span>not available yet</span>              
         }
-        <MyAvatarScene></MyAvatarScene>
       </main>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 
-type Props = {
+type Properties = {
     matrixWidth?: number,
     matrixHeight?: number,
     backgroundColor?: string,
@@ -9,13 +9,13 @@ type Props = {
     fontColor?: string,
 }
 
-const Matrix = ({matrixWidth = document.body.clientWidth,
-    matrixHeight = document.body.clientHeight,
+const Matrix = ({matrixWidth = document.body.offsetWidth,//window.innerWidth;
+    matrixHeight = document.body.offsetHeight,//window.innerHeight;
     backgroundColor = "#000",
     fontFamilyAndSize = "20px Matrix",
-    fontColor = '#4a444f'}:Props) => {
+    fontColor = '#4a444f'}:Properties) => {
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0)
 
     useEffect(() => {
         const canvas: HTMLCanvasElement | null  = document.querySelector("#matrixCanvas");
@@ -39,13 +39,17 @@ const Matrix = ({matrixWidth = document.body.clientWidth,
                 return () => {
                     clearInterval(interval);
                 };
+
             }   
         }
     });
 
     return (
-        <canvas id="matrixCanvas" width={matrixWidth} height={matrixHeight}>
-        </canvas>
+    <>
+        <canvas id="matrixCanvas" width={matrixWidth} height={matrixHeight}></canvas>
+        <div className='overCanvas'></div>
+    </>
+
     )
 
     function matrix (canvasContext: CanvasRenderingContext2D,
