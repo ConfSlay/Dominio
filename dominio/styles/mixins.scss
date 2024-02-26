@@ -1,0 +1,9 @@
+@import "./variables.scss";
+
+@mixin bluetext() {
+    background-image: $bluegradient;
+    -webkit-background-clip: text; /* Safari */
+    -webkit-text-fill-color: transparent; /* Safari */
+    background-clip: text;
+    color: transparent; /* Hide the text */
+}

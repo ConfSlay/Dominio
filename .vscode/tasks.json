@@ -6,7 +6,7 @@
 			"script": "dev",
 			"path": "dominio",
 			"problemMatcher": [],
-			"label": "npm: dev - dominio",
+			"label": "start dev server",
 			"detail": "next dev"
 		},
 		{
@@ -14,7 +14,7 @@
 			"script": "lint",
 			"path": "dominio",
 			"problemMatcher": [],
-			"label": "npm: lint - dominio",
+			"label": "start lint",
 			"detail": "next lint"
 		}
 	]

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 
+import styles from './matrix.module.css'
+
 type Properties = {
     matrixWidth?: number,
     matrixHeight?: number,
@@ -9,15 +11,27 @@ type Properties = {
     fontColor?: string,
 }
 
-const Matrix = ({matrixWidth = document.body.offsetWidth,//window.innerWidth;
+// ------------------------------
+// has to be called as non-SSR
+// <NoSSR><Matrix/></NoSSR>
+// ------------------------------
+
+const Matrix = ({matrixWidth = document.body.offsetWidth ,//window.innerWidth;
     matrixHeight = document.body.offsetHeight,//window.innerHeight;
     backgroundColor = "#000",
     fontFamilyAndSize = "20px Matrix",
     fontColor = '#4a444f'}:Properties) => {
 
     const [count, setCount] = useState(0)
+    const [fontAvailable, setfontAvailable] = useState(false);
 
     useEffect(() => {
+        // check if font is available
+        if (!fontAvailable) {       
+            document.fonts.load('20px "Matrix"').then(() => {
+                setfontAvailable(true);
+            })
+        }
         const canvas: HTMLCanvasElement | null  = document.querySelector("#matrixCanvas");
         if (canvas) {
             const canvasContext = canvas.getContext('2d');
@@ -44,12 +58,18 @@ const Matrix = ({matrixWidth = document.body.offsetWidth,//window.innerWidth;
         }
     });
 
-    return (
-    <>
-        <canvas id="matrixCanvas" width={matrixWidth} height={matrixHeight}></canvas>
-        <div className='overCanvas'></div>
-    </>
-
+    return (          
+        <div id="matrix-displayer">
+            {fontAvailable 
+            ?
+                <>            
+                    <canvas id="matrixCanvas" className={styles.matrixCanvas} width={matrixWidth} height={matrixHeight}></canvas>
+                    <div className={styles.overCanvas}></div> 
+                </>   
+            :
+                null
+            }
+        </div>          
     )
 
     function matrix (canvasContext: CanvasRenderingContext2D,

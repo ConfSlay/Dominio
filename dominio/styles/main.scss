@@ -1,0 +1,49 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+body {
+    min-height: 100vh; /* Ensure body takes up at least the height of the viewport */
+    background-color: $secondary-color;
+    margin: 0;
+    padding: 0;
+}
+
+.Header {
+    flex: 0 0 auto; /* Non-flexible, auto size */
+    display: block;
+    width: 100%;
+    top: 0vw;
+    
+    & header {
+        display: flex;
+    }
+}
+
+.Footer {
+    flex: 0 0 auto; /* Non-flexible, auto size */
+    display: block;
+    width: 100%;
+    margin-top: auto; /* Push the footer to the bottom */
+
+    &:after {
+        content: "";
+        flex-grow: 1; /* Fill remaining space */
+    }
+    
+    & footer {
+        display: flex;
+    }
+}
+
+main {
+    flex: 1 1 auto; /* Flexible, grows and shrinks */
+}
+
+.Footer, .Header {
+    p {
+        text-transform: uppercase; /* Transform text to uppercase */
+        @include bluetext;
+        font-family: $secondary-font;
+    }
+}
+
