@@ -12,7 +12,7 @@ import NoSSR from 'react-no-ssr';
 
 const Home: NextPage = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: "100vh" }}>
+    <div className="flex flex-col min-h-screen">
       <Head>
         <title>CoachingApp</title>
         <meta name="description" content="Coaching app made by Richard PERRET" />
@@ -20,12 +20,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/icon-logo.png" />
       </Head>
 
-      <Header>
-      </Header>     
-      <main> 
+      <Header/>   
+      <main className="flex-grow">
       </main>
-      <Footer>
-      </Footer>
+      <Footer/>
     </div>
   )
 }

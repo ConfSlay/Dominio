@@ -1,8 +1,8 @@
 # Dominio
-***Richard PERRET's personnal blog, sandbox and Portofolio***
+*** Sport App ***
 *edited with https://stackedit.io/app#*
 
- - Ambiance mystique, spirituel, classe. Influence Japon, Mangas, Horror, Greco-Romain
+ - Test Spectrum 
 
  - Loading screen (until Matrix font is downloaded on client terminal)
 
@@ -12,9 +12,3 @@
  https://www.youtube.com/watch?v=s_v7w-Kpx9Q
 
  - logo Batman/Valencia à tester
-
- - Test SCSS
-
- - Test Tailwind 
-
- - Test Spectrum 

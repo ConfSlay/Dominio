@@ -6,11 +6,11 @@ const Footer: React.FC<HeaderProps> = () => {
 
 
   return (
-    <div className='Footer'>
-        <footer>
-            <p>Footer</p>
-        </footer>
-    </div>
+    <footer className="bg-slate-100 py-4 md:py-6">
+      <div className="container mx-auto px-4 text-center">
+        <p className='blue-gradient-text'>&copy; 2024 Your Company. All rights reserved.</p>
+      </div>
+    </footer>
   );
 };
 
