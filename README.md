@@ -1,6 +1,8 @@
-# Dominio
-*** Sport App ***
+# Coaching App
+
 *edited with https://stackedit.io/app#*
+
+## Ideas
 
  - Test Spectrum 
 
@@ -14,8 +16,9 @@
  - logo Batman/Valencia à tester
 
 
-Lancer Docker 
-*** dev ***
+## Lancer Docker
+
+***dev***
 cd docker && docker-compose -f docker-compose.dev.yml up --build
-*** prod ***
+***prod***
 cd docker && docker-compose -f docker-compose.prod.yml up --build
