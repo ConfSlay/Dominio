@@ -1,0 +1,21 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: docker/dockerfile.dev
+    ports:
+      - "3000:3000"
+      
+# "volumes:" This is a key in the Docker Compose file used to specify volume configurations for a service. 
+# Volumes are used to persist data and share files or directories between the host machine and the containers.
+# "-" Indicates that a new volume mapping is being defined.
+# "../coachingapp" This is the source directory on the host machine. ../ refers to the parent directory of the current directory where
+#  the Docker Compose file is located. So, ../coachingapp refers to the coachingapp directory located one level 
+#  above the directory containing the docker-compose.dev.yml file.
+# ":/app" This is the target directory within the container. It specifies where 
+# the source directory from the host machine should be mounted inside the container. 
+# In this case, it's mounting the coachingapp directory from the host machine to the /app directory inside the container.
+    volumes:
+      - ../coachingapp:/app
+

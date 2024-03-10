@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build:
+    # The context option defines the build context directory. 
+    # In this case, .. refers to the parent directory of 
+    # the directory containing the docker-compose.yml file.
+      context: ..
+      dockerfile: docker/dockerfile.prod
+    ports:
+      - "3000:3000"

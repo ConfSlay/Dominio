@@ -12,3 +12,10 @@
  https://www.youtube.com/watch?v=s_v7w-Kpx9Q
 
  - logo Batman/Valencia à tester
+
+
+Lancer Docker 
+*** dev ***
+cd docker && docker-compose -f docker-compose.dev.yml up --build
+*** prod ***
+cd docker && docker-compose -f docker-compose.prod.yml up --build

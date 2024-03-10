@@ -1,0 +1,32 @@
+# Use an official Node.js runtime as a parent image
+FROM node:latest
+
+# Set the working directory in the container
+WORKDIR /app
+
+# The COPY instruction is used to copy files or directories
+#  from the build context (specified in the docker-compose.yml file) 
+#  into the Docker image.
+# ../coachingapp refers to the coachingapp directory located 
+# in the parent directory relative to the location of the Dockerfile. 
+# This is because the docker-compose.yml file sets
+#  the build context to the parent directory.
+# The . at the end of the line specifies the destination directory inside the Docker image.
+#  In this case, . refers to the current working directory inside the Docker image, 
+#  which is /app as specified by the WORKDIR instruction earlier in the Dockerfile.
+COPY ../coachingapp/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code from coachingapp into the container
+COPY ../coachingapp .
+
+# Build the Next.js application
+RUN npm run build
+
+# Expose port 3000 to the outside world
+EXPOSE 3000
+
+# Run the Next.js application
+CMD ["npm", "start"]

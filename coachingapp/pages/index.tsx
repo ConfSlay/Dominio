@@ -4,11 +4,10 @@ import Image from 'next/image'
 import React from 'react';
 import { useState, useEffect } from "react";
 // My elements
-import Matrix from '../components/Matrix/matrix'
-import GravitationalButton from '../components/Buttons/Gravitational-button'
+// import Matrix from '../components/Matrix/matrix'
+// import GravitationalButton from '../components/Buttons/Gravitational-button'
 import Header from  '../components/Header/Header'
 import Footer from  '../components/Footer/Footer'
-import NoSSR from 'react-no-ssr';
 
 const Home: NextPage = () => {
   return (
